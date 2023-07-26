@@ -1,0 +1,10 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zelalemzergaw
+  jpa:
+    properties:
+      hibernate:
+        dialect:
+server:
+  port: 9093

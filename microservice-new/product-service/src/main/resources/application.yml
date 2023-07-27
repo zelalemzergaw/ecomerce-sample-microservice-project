@@ -3,5 +3,13 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/product-service
+  application:
+    name: product-service
 server:
   port: 8081
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

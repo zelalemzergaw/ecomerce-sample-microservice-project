@@ -19,7 +19,7 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest){
         orderService.placeOrder(orderRequest);
-        return "order Request Successfully";
+        return "order saved Successfully";
     }
     @GetMapping("/findAll")
     @ResponseStatus(HttpStatus.OK)

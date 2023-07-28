@@ -2,6 +2,21 @@
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/product
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/order/**
+        - id: inventory-service
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory
 eureka:
   instance:
     hostname: localhost
@@ -10,7 +25,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 server:
-  port: 9094
+  port: 9999
 logging:
   level:
     root: info
@@ -20,5 +35,4 @@ logging:
           gateway:
             route:
               org.springframework.cloud.gateway.route.RouteDefinition: info
-
 

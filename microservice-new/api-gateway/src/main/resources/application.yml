@@ -1,5 +1,5 @@
 
-spring:
+ spring:
   application:
     name: api-gateway
   cloud:

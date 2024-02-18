@@ -14,7 +14,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
-
+    @GetMapping("/home")
+    @ResponseStatus(HttpStatus.OK)
+    public String productsHome(){
+        return "This is product home page!!!";
+    }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createProduct(@RequestBody ProductRequest productRequest){
